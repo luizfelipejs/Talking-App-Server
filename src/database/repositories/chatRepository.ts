@@ -15,6 +15,9 @@ export class ChatRepository implements IChatRepository {
   }
 
   async findChatById (id: string): Promise<Chat> {
-    return await this.ChatRepository.findOne({ where: { id } })
+    return await this.ChatRepository.findOne({ where: { id }, relations: {
+      users: true,
+      messages: { user_sender: true, chat: true },
+    } })
   }
 }

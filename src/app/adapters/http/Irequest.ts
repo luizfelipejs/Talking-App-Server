@@ -1,4 +1,3 @@
+import { Request } from "express";
 
-export interface Irequest {
-  body: any;
-}
+export interface Irequest extends Request {}

@@ -1,4 +1,3 @@
-export interface Iresponse {
-  json: (body?: any) => any;
-  status: (code?: any) => any;
-}
+import { Response } from "express";
+
+export interface Iresponse extends Response {}
